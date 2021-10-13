@@ -1,0 +1,12 @@
+2021-09-03
+- Fix issue with script exiting cleanly
+
+2021-06-11
+- Update output to user
+
+2021-05-13
+- Add output to inform user
+
+2021-05-12
+- Initial commit
+- Update email in Dockerfile

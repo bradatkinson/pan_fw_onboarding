@@ -185,7 +185,13 @@ def commit_config(pano_conn):
     """
     print('Committing config...')
 
-    command = "<commit><description>Add Firewall Serial Numbers</description></commit>"
+    admin = config.paloalto['username']
+    command = ("<commit><partial><admin><member>{}</member></admin>"
+               "<no-template/><no-template-stack/>"
+               "<no-log-collector-group/><no-log-collector/>"
+               "<shared-object>excluded</shared-object></partial>"
+               "<description>Add Firewall Serial Numbers</description>"
+               "</commit>".format(admin))
     results = pano_conn.commit(sync=True, cmd=command)
 
     print('-- Commit Status:\n')

@@ -215,7 +215,7 @@ def main():
         has_serialnum = process_device_serialnum(get_results)
 
         if has_serialnum:
-            print('-- Serial number {} already entered in Panorama\n')
+            print('-- Serial number {} already entered in Panorama\n'.format(serial_number))
         else:
             print('-- Adding serial number {} to Panorama\n'.format(serial_number))
             add_results = add_device_serialnum(pano_conn, serial_number)
